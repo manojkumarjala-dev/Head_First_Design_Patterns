@@ -7,7 +7,13 @@ public class Mocha extends AbsCondiment {
 
     @Override
     public float getCost() {
-        return 0.20f + beverage.getCost();
+        if (beverage.getLevel() == Level.TALL) {
+            return 0.20f + beverage.getCost();
+        } else if (beverage.getLevel() == Level.GRANDE) {
+            return 0.25f + beverage.getCost();
+        } else {
+            return 0.30f + beverage.getCost();
+        }
     }
 
 }

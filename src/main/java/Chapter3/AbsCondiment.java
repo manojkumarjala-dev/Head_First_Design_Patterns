@@ -11,16 +11,13 @@ public abstract class AbsCondiment extends AbsBeverage {
      * @param description text this decorator adds (e.g. "Mocha")
      */
     protected AbsCondiment(AbsBeverage beverage, String description) {
-        super(description);                 // set decorator’s own descriptor part
-        if (beverage == null) {
-            throw new IllegalArgumentException("Decorator needs a Beverage to wrap");
-        }
+        super(description, beverage.getLevel());                 // set decorator’s own descriptor part
         this.beverage = beverage;           // store wrapped component
     }
 
-    /** Default implementation: delegate then append our own text. */
+    /** Making use of getBaseDescription to print only the condiment without the size */
     @Override
     public String getDescription() {
-        return beverage.getDescription() + ", " + super.getDescription();
+        return beverage.getDescription() + ", " + getBaseDescription();
     }
 }
