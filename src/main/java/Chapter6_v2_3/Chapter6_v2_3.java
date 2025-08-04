@@ -1,8 +1,6 @@
-package Chapter6_v2;
+package Chapter6_v2_3;
 
-import Chapter6_v2.Remote;
-
-public class Chapter6_v2 {
+public class Chapter6_v2_3 {
     public static void main(String[] args){
         Remote remote = new Remote(4);
         Light kitchenLight = new Light("Kitchen light is on", "Kitchen light is Off", false);
@@ -24,6 +22,7 @@ public class Chapter6_v2 {
         remote.clickSlot(2);
         remote.clickSlot(3);
 
+        remote.undo();
 
     }
 }

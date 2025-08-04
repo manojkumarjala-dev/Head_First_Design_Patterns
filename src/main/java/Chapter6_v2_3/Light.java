@@ -1,4 +1,4 @@
-package Chapter6_v2;
+package Chapter6_v2_3;
 
 public class Light {
     public String onMessage;
